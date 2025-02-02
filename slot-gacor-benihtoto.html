@@ -123,11 +123,34 @@
         </div>
         <button class="button" onclick="window.location.href='https://daftar1.benihtotojp.one/?ref=slotresmi'">Daftar Sekarang</button>
     </div>
+    </div>
     <div class="menu-button" onclick="togglePopup()">MENU</div>
     <div class="popup" id="popup">
         <p><a href="https://wa.me/6282317563025" target="_blank">📱 WhatsApp Official</a></p>
         <p><a href="https://daftar1.benihtotojp.one/?ref=slotresmi" target="_blank">💬 Live Chat</a></p>
     </div>
+    <audio id="audio" src="sound.mp3" autoplay loop></audio>
+    <button onclick="toggleSound()">Play/Pause Sound</button>
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImg').src = src;
+        }
+        function togglePopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+        function toggleSound() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>
+	
 <!DOCTYPE html>
 <html lang="id">
 <head>

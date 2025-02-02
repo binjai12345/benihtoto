@@ -75,7 +75,7 @@
             bottom: 20px;
             left: 20px;
         }
-        .popup {
+        .popup, .welcome-popup {
             display: none;
             position: fixed;
             bottom: 60px;
@@ -88,11 +88,11 @@
             text-align: left;
             width: 200px;
         }
-        .popup p {
+        .popup p, .welcome-popup p {
             margin: 10px 0;
             font-size: 16px;
         }
-        .popup a {
+        .popup a, .welcome-popup a {
             display: block;
             background: #25d366;
             color: white;
@@ -102,12 +102,15 @@
             text-decoration: none;
             margin-bottom: 5px;
         }
-        .popup a:last-child {
+        .popup a:last-child, .welcome-popup a:last-child {
             background: #007bff;
         }
     </style>
 </head>
 <body>
+    <div class="logo">
+        <img src="https://rnr303misterybox.fun/files/GLyK4pOUhJEjrVuYcB7znXFWQtgxzv5VVWyoTD2f.gif" alt="Kangjitu Logo">
+    </div>
     <div class="container">
         <div class="main-image">
             <img id="mainImg" src="https://i.postimg.cc/Qd1ngvZ0/BOLA-PETIR-done.png" alt="Main Image">
@@ -124,6 +127,11 @@
     <div class="popup" id="popup">
         <p><a href="https://wa.me/6282317563025" target="_blank">📱 WhatsApp Official</a></p>
         <p><a href="https://daftar1.benihtotojp.one/?ref=slotresmi" target="_blank">💬 Live Chat</a></p>
+    </div>
+    <div class="welcome-popup" id="welcomePopup">
+        <p><strong>Belum tau cara daftar?</strong></p>
+        <p>Chat admin aja. Klik tombol kiri bawah. 👇</p>
+        <button onclick="closeWelcomePopup()">X</button>
     </div>
     <audio id="audio" src="sound.mp3" autoplay loop></audio>
     <button onclick="toggleSound()">Play/Pause Sound</button>
@@ -142,6 +150,15 @@
             } else {
                 audio.pause();
             }
+        }
+        function showWelcomePopup() {
+            document.getElementById('welcomePopup').style.display = 'block';
+        }
+        function closeWelcomePopup() {
+            document.getElementById('welcomePopup').style.display = 'none';
+        }
+        window.onload = function() {
+            setTimeout(showWelcomePopup, 2000);
         }
     </script>
 </body>
